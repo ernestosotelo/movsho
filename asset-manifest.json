@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dfe16451.chunk.css",
+    "main.js": "/static/js/main.c431ff7f.chunk.js",
+    "main.js.map": "/static/js/main.c431ff7f.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.c04e25d7.chunk.js": "/static/js/2.c04e25d7.chunk.js",
+    "static/js/2.c04e25d7.chunk.js.map": "/static/js/2.c04e25d7.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.1f8303913b839802ebd7a10b8c05ba23.js": "/precache-manifest.1f8303913b839802ebd7a10b8c05ba23.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.dfe16451.chunk.css.map": "/static/css/main.dfe16451.chunk.css.map",
+    "static/media/captainMarvel.jpg": "/static/media/captainMarvel.644d9bee.jpg",
+    "static/media/intro.svg": "/static/media/intro.3a26f212.svg",
+    "static/media/movsho.svg": "/static/media/movsho.ccfadd30.svg",
+    "static/media/movshoHearts.svg": "/static/media/movshoHearts.ed75f9bc.svg",
+    "static/media/navIcon.svg": "/static/media/navIcon.b6eded60.svg",
+    "static/media/navLogo.svg": "/static/media/navLogo.96e5c0f6.svg",
+    "static/media/ourPlanet.jpg": "/static/media/ourPlanet.61420198.jpg",
+    "static/media/viewAllMovies.svg": "/static/media/viewAllMovies.4780abe0.svg",
+    "static/media/viewAllShows.svg": "/static/media/viewAllShows.2f5a180c.svg"
+  }
+}
