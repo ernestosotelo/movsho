@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2d0e721a818826f69a92a3c0352b8f73",
+    "revision": "305f79e704813c068e6c282fbb69b73f",
     "url": "/movsho/index.html"
   },
   {
-    "revision": "f1994feac7b6bd216179",
+    "revision": "4bcdb5e637a6492c7841",
     "url": "/movsho/static/css/main.dfe16451.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movsho/static/js/2.c04e25d7.chunk.js"
   },
   {
-    "revision": "f1994feac7b6bd216179",
-    "url": "/movsho/static/js/main.b6551957.chunk.js"
+    "revision": "4bcdb5e637a6492c7841",
+    "url": "/movsho/static/js/main.3e9c08ae.chunk.js"
   },
   {
     "revision": "75958aa5c5996ba09e7a",
