@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "305f79e704813c068e6c282fbb69b73f",
+    "revision": "daa6a1608195496ca21c227de7e643a9",
     "url": "/movsho/index.html"
   },
   {
-    "revision": "4bcdb5e637a6492c7841",
-    "url": "/movsho/static/css/main.dfe16451.chunk.css"
+    "revision": "71e6ad44991839121f15",
+    "url": "/movsho/static/css/main.22fc665b.chunk.css"
   },
   {
-    "revision": "7da3a4cb16fbc140e565",
-    "url": "/movsho/static/js/2.c04e25d7.chunk.js"
+    "revision": "5dbb51391650aeeab5f5",
+    "url": "/movsho/static/js/2.f8817a37.chunk.js"
   },
   {
-    "revision": "4bcdb5e637a6492c7841",
-    "url": "/movsho/static/js/main.3e9c08ae.chunk.js"
+    "revision": "71e6ad44991839121f15",
+    "url": "/movsho/static/js/main.959f8822.chunk.js"
   },
   {
     "revision": "75958aa5c5996ba09e7a",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "644d9bee9e525c581752a21cd07654ae",
     "url": "/movsho/static/media/captainMarvel.644d9bee.jpg"
+  },
+  {
+    "revision": "d9b3e61e196b3320e6599196bb5ed57e",
+    "url": "/movsho/static/media/eyes.d9b3e61e.svg"
   },
   {
     "revision": "3a26f2123e3b2644e46cff6ea371f799",
