@@ -1,0 +1,34 @@
+@import "variables";
+
+.block {
+  display: grid;
+  justify-content: center;
+  padding: 2rem;
+  grid-template-columns: auto auto;
+  background: darken($movshoBlue, 35%);
+}
+
+.linkBlock {
+  display: grid;
+  margin: 5rem;
+  border-radius: 2rem;
+  .link {
+    text-decoration: none;
+  }
+
+  img {
+    width: 35rem;
+    background-color: rgb(25, 25, 199);
+    border-radius: 2rem;
+  }
+
+  h3 {
+    text-align: center;
+    text-decoration: none;
+    color: $movshoYellow;
+    font-size: 3rem;
+    border-bottom: $movshoBlue solid 1rem;
+    font-family: $headingFont;
+    letter-spacing: 0.3rem;
+  }
+}

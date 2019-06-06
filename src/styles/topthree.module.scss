@@ -1,0 +1,37 @@
+@import "variables";
+
+.block {
+  background: #0a087a3b;
+  display: grid;
+  max-width: 55rem;
+  padding: 3rem 5rem 3rem 5rem;
+  margin: 0 auto;
+
+  img {
+    width: 7rem;
+    justify-self: end;
+  }
+
+  h2 {
+    border: dotted 0.4rem $movshoBlue;
+    padding: 1rem;
+    grid-column: 1/3;
+    text-align: center;
+    border-radius: 1rem;
+    margin: 1rem;
+    font-family: $headingFont;
+    font-size: 3.6rem;
+    color: $movshoYellow;
+  }
+
+  ul {
+    justify-self: start;
+  }
+
+  li {
+    width: 25rem;
+    color: $lightYellow;
+    font-size: 1.5rem;
+    list-style: none;
+  }
+}

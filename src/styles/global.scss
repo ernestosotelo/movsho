@@ -1,0 +1,90 @@
+@import "variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: $mainFont;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+  pointer-events: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+@mixin device($breakpoint) {
+  @if $breakpoint == "deviceXSM" {
+    @media (max-width: 25.875em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == "deviceSM" {
+    @media (max-width: 48em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == "deviceMD" {
+    @media (max-width: 64em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == "deviceLG" {
+    @media (max-width: 85.375em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == "deviceXLG" {
+    @media (min-width: 120em) {
+      @content;
+    }
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include device("deviceXLG") {
+    font-size: 75%;
+  }
+
+  @include device("deviceLG") {
+    font-size: 60%;
+  }
+
+  @include device("deviceMD") {
+    font-size: 45%;
+  }
+
+  @include device("deviceSM") {
+    font-size: 35%;
+  }
+
+  @include device("deviceXSM") {
+    font-size: 25%;
+  }
+}

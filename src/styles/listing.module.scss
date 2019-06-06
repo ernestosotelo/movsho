@@ -1,0 +1,119 @@
+@import "variables";
+
+.block {
+  background: hsl(215, 100%, 3%);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+}
+
+.listBlock {
+  background: rgb(10, 16, 35);
+  background: linear-gradient(
+    180deg,
+    rgba(23, 1, 146, 0.911) 0%,
+    rgba(10, 16, 35, 0.65) 50%
+  );
+  border: 0.2rem outset darken($movshoBlue, 25%);
+  padding: 1rem;
+  display: grid;
+  padding: 2rem;
+  margin: 1rem 1rem 5rem 1rem;
+  color: $lightBlue;
+
+  .name {
+    color: $lightBlue;
+    padding: 1rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-family: $headingFont;
+    font-size: 2rem;
+  }
+
+  .plot {
+    color: $lightBlue;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.5rem;
+
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  .ratings {
+    list-style: none;
+    display: grid;
+    grid-template-rows: auto auto;
+
+    grid-row-gap: 0.5rem;
+    padding-left: 0;
+
+    b {
+      padding: 0.5rem;
+    }
+
+    li {
+      padding: 0.2rem;
+    }
+  }
+
+  img {
+    justify-self: center;
+    width: 15rem;
+  }
+
+  .releaseDate {
+    text-align: right;
+  }
+
+  .genre {
+    padding: 1rem;
+  }
+
+  .stream {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .addedMessage {
+    color: #31ae7a;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .watchBtn {
+    width: 12rem;
+    margin: 0 auto;
+    display: block;
+    color: #314fae;
+    border: solid 0.25rem darken($movshoYellow, 10%);
+    background: $movshoYellow;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 0.5rem 0 0.5rem 0;
+
+    &:hover {
+      background: darken($movshoYellow, 2%);
+      transform: scale(1.1);
+      cursor: pointer;
+      transition: background 200ms, transform 200ms;
+    }
+
+    .eyes {
+      width: 4rem;
+
+      margin: 0 auto;
+    }
+  }
+}
+
+.reviewBtn {
+  background: $movshoBlue;
+  color: $lightBlue;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-color: $lightBlue;
+}

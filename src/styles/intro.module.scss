@@ -1,0 +1,34 @@
+@import "variables";
+
+.block {
+  padding: 1rem;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: linear-gradient(90deg, #161614 0%, #0a0a00 100%);
+
+  .title {
+    font-size: 2rem;
+    font-family: $headingFont;
+    color: $lightBlue;
+    letter-spacing: 0.1rem;
+  }
+
+  img {
+    margin-left: 7rem;
+    width: 7rem;
+  }
+
+  button {
+    z-index: 1;
+    margin: 2rem;
+    color: $movshoBlue;
+    border-radius: 0.5rem;
+    border-color: $movshoYellow;
+    background: $lightBlue;
+    border-width: 0.2rem;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+}

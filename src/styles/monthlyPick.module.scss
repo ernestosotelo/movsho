@@ -1,0 +1,82 @@
+@import "variables";
+
+.block {
+  background: linear-gradient(90deg, #0a0a00 0%, #161614 100%);
+  padding: 2rem;
+  z-index: 1;
+
+  .header {
+    letter-spacing: 0.37rem;
+    font-family: $headingFont;
+    font-size: 4.4rem;
+    color: $lightYellow;
+    text-shadow: -3px 2px 0px #a90000;
+  }
+
+  .subHeader {
+    font-size: 4rem;
+    color: $lightBlue;
+    margin-bottom: 2rem;
+  }
+}
+
+.picksBlock {
+  grid-column: 1/3;
+  margin-top: 8rem;
+}
+
+.selectionBlock {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 4rem;
+  margin-bottom: 10rem;
+
+  .info {
+    padding: 2rem;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border-radius: 2rem;
+    background: linear-gradient(180deg, #fafafa10 0%, #c08b0f00 100%);
+    display: grid;
+  }
+  img {
+    width: 25rem;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    border-left: inset 0.3rem #f5e4b4;
+    border-bottom: inset 0.3rem #f5e4b4;
+    box-shadow: 0px 0px 7px #290511;
+  }
+  button {
+    background: rgb(2, 62, 77);
+    width: 30rem;
+    max-width: 30rem;
+    border-radius: 3rem;
+    padding: 0.4rem;
+    color: $movshoYellow;
+    font-size: 3rem;
+    border: 0.5rem outset $movshoYellow;
+    font-family: $headingFont;
+    justify-self: end;
+    z-index: 1;
+  }
+
+  .title {
+    font-weight: 300;
+    color: $lightYellow;
+    font-size: 4rem;
+  }
+
+  .plot {
+    width: 100%;
+    height: 100%;
+    color: $lightBlue;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+
+  .releaseDate {
+    color: $lightBlue;
+    font-size: 1.4rem;
+  }
+}

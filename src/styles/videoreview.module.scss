@@ -1,0 +1,33 @@
+@import "variables";
+
+.block {
+  background: $almostBlack;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 0 10rem 0;
+  h1 {
+    width: 100%;
+
+    color: $lightBlue;
+    text-align: center;
+    background: $movshoBlue;
+    padding: 2rem;
+  }
+
+  h2 {
+    color: $movshoYellow;
+    margin: 2rem;
+  }
+
+  iframe {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 1rem;
+  }
+}
+
+.videosBlock {
+  margin: 6rem;
+}
