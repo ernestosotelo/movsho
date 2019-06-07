@@ -5,5 +5,8 @@
 
 [[redirects]]
   from = "/api/movies"
-  to = "/index.html/movies.json"
+  to = "/api/movies.json"
 
+[[redirects]]
+  from = "/api"
+  to = "/index.html"
