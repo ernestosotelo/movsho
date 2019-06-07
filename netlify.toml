@@ -12,3 +12,4 @@
   from = "/*"
   to = "/"
   status = 304
+  force = true
