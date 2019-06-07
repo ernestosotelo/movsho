@@ -8,3 +8,7 @@
   to = "/movies"
   status = 200
 
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 304
