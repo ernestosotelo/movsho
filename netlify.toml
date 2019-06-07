@@ -8,5 +8,5 @@
 [[redirects]]
   from = "/api/movies"
   to = "/api/movies.json"
-
+  status = 200
 
