@@ -1,10 +1,10 @@
 [[redirects]]
   from = "/*"
   to = "/"
-
+  status = 200
 
 [[redirects]]
-  from = "/movieapi"
-  to = "/api/movies.json"
+  from = "/api/movies.json"
+  to = "/movies"
   status = 200
 
