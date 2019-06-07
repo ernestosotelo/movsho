@@ -7,7 +7,6 @@ import navLogo from "../images/svgs/navLogo.svg"
 const Header = () => {
   const [menuState, setMenuState] = useState("none")
 
-  const [list, setList] = useState([])
   return (
     <div className={headerCSS.block}>
       <div className={headerCSS.navBar}>

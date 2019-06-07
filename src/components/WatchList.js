@@ -8,8 +8,6 @@ import { removeSelection } from "../actions/selections"
 const WatchList = ({ removeSelection, list }) => {
   const [openClose, setOpenClose] = useState(false)
 
-  const handleList = () => {}
-
   // if(list.length >=1) {}
   return (
     <div className={watchListCSS.block}>

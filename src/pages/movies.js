@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import listingCSS from "../styles/listing.module.scss"
 import {
@@ -14,7 +14,6 @@ const MoviesPage = ({
   fetchMovies,
   movies,
   addSelection,
-  movieId,
   removeSelection,
   list
 }) => {

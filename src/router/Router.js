@@ -1,11 +1,11 @@
 import React from "react"
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import App from "../pages/app"
 import MoviesPage from "../pages/movies"
 import MovieReviewsPage from "../pages/moviereviews"
 
-const AppRouter = () => (
-  <BrowserRouter basename="/">
+export default () => (
+  <Router>
     <Switch>
       <Route path="/" exact component={App} />
       <Route path="/movies" exact component={MoviesPage} />
@@ -15,7 +15,5 @@ const AppRouter = () => (
         component={MovieReviewsPage}
       />
     </Switch>
-  </BrowserRouter>
+  </Router>
 )
-
-export default AppRouter

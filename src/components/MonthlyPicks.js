@@ -24,7 +24,7 @@ const MonthlyPicks = () => {
 
             <button>View Profile</button>
           </div>
-          <img src={captainmarvel} />
+          <img alt="Poster of Captain Marvel" src={captainmarvel} />
         </div>
 
         <div className={monthlyPickCSS.selectionBlock}>
@@ -43,7 +43,7 @@ const MonthlyPicks = () => {
 
             <button>View Profile</button>
           </div>
-          <img src={ourplanet} />
+          <img alt="Poster of Our Planet" src={ourplanet} />
         </div>
       </div>
     </div>

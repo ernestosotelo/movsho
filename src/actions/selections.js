@@ -6,7 +6,7 @@ export const fetchMovies = () => {
     dispatch(fetchMoviesLoading())
 
     axios
-      .get(`../../api/movies.json`)
+      .get(`/api/movies.json`)
       .then(res => {
         dispatch(fetchMoviesSuccess(res.data))
       })

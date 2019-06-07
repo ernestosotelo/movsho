@@ -1,11 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { Provider } from "react-redux"
-import { createStore, combineReducers, applyMiddleware } from "redux"
+import { createStore, applyMiddleware } from "redux"
 import thunk from "redux-thunk"
 import moviesReducer from "./reducers/moviesReducer"
 import "./styles/settings.scss"
-import AppRouter from "./router/AppRouter"
+import Router from "./router/Router"
 import * as serviceWorker from "./serviceWorker"
 
 const rootReducer = moviesReducer
@@ -14,7 +14,7 @@ const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppRouter />
+    <Router />
   </Provider>,
   document.getElementById("root")
 )
