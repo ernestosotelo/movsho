@@ -4,7 +4,7 @@
   status = 200
 
 [[redirects]]
-  from = "api/"
-  to = "api/movies.json"
+  from = "/api/"
+  to = "/api/movies.json"
   status = 301
 
