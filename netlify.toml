@@ -1,12 +1,10 @@
-# [[redirects]]
-#   from = "/*"
-#   to = "/index.html"
-#   status = 200
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
 
-# [[redirects]]
-#   from = "/api/movies"
-#   to = "/api/movies.json"
+[[redirects]]
+  from = "/api/movies.json"
+  to = "/api/movies"
 
-# [[redirects]]
-#   from = "/api"
-#   to = "/index.html"
+
