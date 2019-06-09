@@ -1,28 +1,34 @@
 @import "variables";
+@import "global";
 
 .block {
-  display: grid;
-  justify-content: center;
-  padding: 2rem;
-  grid-template-columns: auto auto;
-  background: darken($movshoBlue, 35%);
-}
-
-.linkBlock {
-  display: grid;
-  margin: 5rem;
+  display: flex;
+  text-align: right;
   border-radius: 2rem;
+  justify-content: flex-end;
+  @include device("XSM") {
+    justify-content: center;
+  }
+
+  @include device("XSM") {
+    padding: 5rem;
+  }
+
+  @include device("SM") {
+    margin-top: 5rem;
+  }
+
   .link {
     text-decoration: none;
   }
 
   img {
-    width: 35rem;
-    background-color: rgb(25, 25, 199);
-    border-radius: 2rem;
+    width: 25rem;
+    border: 0.4rem outset $movshoBlue;
   }
 
   h3 {
+    padding: 0.5rem;
     text-align: center;
     text-decoration: none;
     color: $movshoYellow;
@@ -30,5 +36,8 @@
     border-bottom: $movshoBlue solid 1rem;
     font-family: $headingFont;
     letter-spacing: 0.3rem;
+    @include device("XSM") {
+      font-size: 2.4rem;
+    }
   }
 }

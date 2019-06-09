@@ -1,10 +1,11 @@
 @import "variables";
+@import "global";
 
 .block {
   background: hsl(215, 100%, 3%);
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(45rem, 1fr));
 }
 
 .listBlock {
@@ -27,53 +28,79 @@
     letter-spacing: 0.1rem;
     text-align: center;
     font-family: $headingFont;
-    font-size: 2rem;
+    font-size: 2.3rem;
+    @include device("SM") {
+      font-size: 2rem;
+    }
   }
 
   .plot {
     color: $lightBlue;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 0;
-    line-height: 1.5rem;
-
+    line-height: 2.4rem;
+    height: 10rem;
     padding: 0.5rem;
     border-radius: 1rem;
+
+    @include device("SM") {
+      font-size: 1.9rem;
+      height: 10rem;
+    }
   }
 
   .ratings {
     list-style: none;
     display: grid;
     grid-template-rows: auto auto;
-
+    font-size: 1.3rem;
     grid-row-gap: 0.5rem;
     padding-left: 0;
-
+    @include device("SM") {
+      font-size: 1.6rem;
+    }
     b {
       padding: 0.5rem;
     }
-
     li {
       padding: 0.2rem;
     }
   }
 
-  img {
+  .movshoRating {
+    text-align: right;
+    font-size: 1.7rem;
+    img {
+      width: 3rem;
+    }
+  }
+
+  .poster {
     justify-self: center;
-    width: 15rem;
+    width: 25rem;
+    border: ridge 0.5rem lighten($movshoBlue, 50%);
   }
 
   .releaseDate {
     text-align: right;
+    @include device("SM") {
+      font-size: 1.8rem;
+    }
   }
 
   .genre {
     padding: 1rem;
+    @include device("SM") {
+      font-size: 1.7rem;
+    }
   }
 
   .stream {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 5rem;
+    @include device("SM") {
+      font-size: 1.9rem;
+    }
   }
 
   .addedMessage {
@@ -83,26 +110,34 @@
   }
 
   .watchBtn {
-    width: 12rem;
+    width: 17rem;
     margin: 0 auto;
-    display: block;
     color: #314fae;
-    border: solid 0.25rem darken($movshoYellow, 10%);
+    border: outset 0.25rem lighten($movshoYellow, 30%);
     background: $movshoYellow;
     border-radius: 0.5rem;
     font-weight: 700;
     font-size: 2rem;
     padding: 0.5rem 0 0.5rem 0;
+    @include device("SM") {
+      padding: 2rem;
+    }
 
     &:hover {
-      background: darken($movshoYellow, 2%);
-      transform: scale(1.1);
+      background: lighten($movshoYellow, 5%);
+      transform: scale(1.05);
       cursor: pointer;
       transition: background 200ms, transform 200ms;
     }
 
+    &:active {
+      border-style: inset;
+      background: darken($movshoYellow, 1%);
+      transition: background 200ms, border-style 200ms;
+    }
+
     .eyes {
-      width: 4rem;
+      display: block;
 
       margin: 0 auto;
     }
@@ -110,10 +145,22 @@
 }
 
 .reviewBtn {
-  background: $movshoBlue;
+  background: #bd3737;
   color: $lightBlue;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
+  font-weight: bold;
   padding: 1rem;
   border-radius: 0.5rem;
-  border-color: $lightBlue;
+
+  &:hover {
+    background: lighten(#bd3737, 5%);
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: background 200ms, transform 200ms;
+  }
+
+  &:active {
+    background: darken(#bd3737, 2%);
+    transition: background 200ms;
+  }
 }

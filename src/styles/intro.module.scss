@@ -1,34 +1,48 @@
 @import "variables";
+@import "global";
 
 .block {
-  padding: 1rem;
+  padding: 5rem;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: linear-gradient(90deg, #161614 0%, #0a0a00 100%);
+  background: darken($movshoBlue, 40%);
 
   .title {
     font-size: 2rem;
     font-family: $headingFont;
     color: $lightBlue;
     letter-spacing: 0.1rem;
+    @include device("MD") {
+      font-size: 2.5rem;
+      width: 100%;
+      text-align: center;
+      margin: 1rem;
+    }
   }
 
   img {
-    margin-left: 7rem;
-    width: 7rem;
+    width: 10rem;
+    justify-self: center;
+    @include device("MD") {
+      width: 15rem;
+    }
   }
 
   button {
-    z-index: 1;
     margin: 2rem;
-    color: $movshoBlue;
+    width: 20rem;
+    color: $lightBlue;
     border-radius: 0.5rem;
-    border-color: $movshoYellow;
-    background: $lightBlue;
+    background: $movshoBlue;
     border-width: 0.2rem;
-    padding: 1rem;
+    padding: 0.8rem;
     font-size: 2rem;
+    @include device("MD") {
+      width: 30rem;
+      padding: 1.5rem;
+      font-size: 2.5rem;
+    }
   }
 }

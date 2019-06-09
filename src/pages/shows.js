@@ -1,71 +1,72 @@
-// import React, { useState, useEffect } from "react"
-// import Layout from "../Layout"
-// import axios from "axios"
-// import listingCSS from "../styles/listing.module.scss"
-// import Listing from "../components/Listing"
-// import TopThree from "../components/TopThree"
+import React, { useEffect } from "react"
+import { connect } from "react-redux"
+import "../styles/global.scss"
+import listingCSS from "../styles/listing.module.scss"
 
-// const MoviesPage = () => {
-//   const [movies, setMovies] = useState([])
+import {
+  fetchSelections,
+  addSelection,
+  removeSelection
+} from "../actions/selections"
+import Layout from "../Layout"
+import Listing from "../components/Listing"
+import sortSelections from "../selectors/sorting"
 
-//   useEffect(() => {
-//     axios
-//       .get(
-//         `https://gist.githubusercontent.com/ernestosotelo/9932c659b460e5ddeec8a8ae76164a0d/raw/ce8d7b248f61e73bf3c767538728505d6bac9835/json`
-//       )
-//       .then(res => {
-//         const data = res.data
-//         setMovies(data)
-//       })
-//   }, [])
+const ShowsPage = ({ fetchSelections, shows, addSelection, list }) => {
+  useEffect(() => {
+    document.title = "Movsho | Shows"
+    if (shows.length === 0) {
+      return fetchSelections("shows")
+    }
+  }, [shows.length, fetchSelections])
 
-//   return (
-//     <Layout>
-//       <div style={{ background: "hsl(215, 100%, 3%" }}>
-//         <TopThree />
+  return (
+    <Layout>
+      <div style={{ background: "hsl(215, 100%, 3%" }}>
+        <div className={listingCSS.block}>
+          {shows.map(show => {
+            const match = list.find(item => item.id === show.id)
+            return (
+              <Listing
+                listAdd={() => {
+                  if (!match) {
+                    addSelection({
+                      id: show.id,
+                      name: show.name,
+                      poster: show.poster
+                    })
+                  }
+                }}
+                addButtonToggle={match ? "none" : "block"}
+                addedMessageToggle={match ? "block" : "none"}
+                key={show.id}
+                {...show}
+                alt={show.name}
+              />
+            )
+          })}
+        </div>
+      </div>
+    </Layout>
+  )
+}
 
-//         <p style={{ color: "#e0dfe2", fontSize: "1.7rem", marginTop: "3rem" }}>
-//           <b
-//             style={{
-//               padding: ".5rem 1.5rem .5rem 1.5rem",
-//               background: "#f9ba00",
-//               fontSize: "2rem",
-//               marginLeft: "4rem",
-//               color: "black"
-//             }}
-//           >
-//             !
-//           </b>{" "}
-//           Click 'Remove' to remove movies you definitely will not watch! There
-//           is an undo option.
-//         </p>
+const mapStateToProps = state => {
+  return {
+    shows: sortSelections(state.selections.shows, state.filters),
+    loading: state.selections.showsLoading,
+    error: state.selections.showsError,
+    list: state.selections.list
+  }
+}
 
-//         <div className={listingCSS.block}>
-//           {movies.map(movie => {
-//             return (
-//               <Listing
-//                 key={movie.name}
-//                 name={movie.name}
-//                 plot={movie.plot}
-//                 date={movie.releaseDate}
-//                 genre={movie.genre}
-//                 imdbRating={movie.imdbRating ? movie.imdbRating : "N/A"}
-//                 tomatoRating={movie.tomatoRating ? movie.tomatoRating : "N/A"}
-//                 metaRating={movie.metaRating ? movie.metaRating : "N/A"}
-//                 erbertRating={movie.erbertRating ? movie.erbertRating : "N/A"}
-//                 tmdbRating={movie.tmdbRating ? movie.tmdbRating : "N/A"}
-//                 movshoRating={movie.movshoRating}
-//                 streamOn={movie.streamOn}
-//                 poster={movie.poster}
-//                 alt={movie.name}
-//                 url={"movies/movie-reviews/"}
-//               />
-//             )
-//           })}
-//         </div>
-//       </div>
-//     </Layout>
-//   )
-// }
+const mapDispatchToProps = {
+  fetchSelections,
+  addSelection,
+  removeSelection
+}
 
-// export default MoviesPage
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ShowsPage)

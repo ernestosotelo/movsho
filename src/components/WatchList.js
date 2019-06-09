@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
 import watchListCSS from "../styles/watchList.module.scss"
+import { HashLink as Link } from "react-router-hash-link"
 import Modal from "react-modal"
 import "../styles/watchList.module.scss"
 import { removeSelection } from "../actions/selections"
 
-const WatchList = ({ removeSelection, list }) => {
+const WatchList = ({ removeSelection, list, movies, shows }) => {
   const [openClose, setOpenClose] = useState(false)
 
   // if(list.length >=1) {}
@@ -53,43 +54,70 @@ const WatchList = ({ removeSelection, list }) => {
             opacity="0.86"
           />
         </svg>
-        {list.length === 0 ? <p>Empty List</p> : <p>Total: {list.length}</p>}
+        {list.length === 0 ? (
+          <p style={{ backgroundColor: "rgba(189, 55, 55, 0.82)" }}>Empty</p>
+        ) : (
+          <p style={{ backgroundColor: "rgba(102, 170, 17, 0.68)" }}>
+            Total: {list.length}
+          </p>
+        )}
       </button>
 
       <Modal
-        className={watchListCSS.modal}
         style={{
           overlay: {
-            left: "75%",
-            bottom: "6.2rem",
-            top: "40rem",
-            zIndex: "100",
-            backgroundColor: "#d89c1c73"
+            backgroundColor: "rgba(45, 61, 119, 0.91)",
+            width: "100%",
+            right: "0",
+            left: "0",
+            height: "100%",
+            bottom: "11rem",
+            top: "0",
+            display: "grid",
+            gridTemplateRows: "5rem 1fr",
+            padding: "2rem",
+            zIndex: "50"
           }
         }}
+        className={watchListCSS.modal}
         ariaHideApp={false}
         isOpen={openClose}
-        contentLabel="Minimal Modal Example"
       >
         {" "}
-        <button onClick={() => setOpenClose(false)}>X</button>
+        <button
+          className={watchListCSS.close}
+          onClick={() => setOpenClose(false)}
+        >
+          X
+        </button>
         {list.length === 0 && (
-          <p className={watchListCSS.emptyMessage}>
-            Your watch list is empty! Click the 'Watch List' button to add to
-            your list.
-          </p>
+          <p className={watchListCSS.emptyMessage}>Your watch list is empty!</p>
         )}
-        <div style={{ display: "flex" }}>
+        <div className={watchListCSS.itemsBlock}>
           {list.map(item => (
-            <div style={{ maxWidth: "5rem" }} key={item.id}>
-              <p>{item.name}</p>
+            <div className={watchListCSS.item} key={item.id}>
               <img
-                style={{ width: "5rem" }}
+                className={watchListCSS.poster}
                 src={item.poster}
                 alt={`Poster of: ${item.name}`}
               />
-              <button onClick={() => removeSelection({ id: item.id })}>
-                X
+              <p>{item.name}</p>
+              <Link
+                onClick={() => setOpenClose(false)}
+                className={watchListCSS.hashLink}
+                to={
+                  movies.find(movie => item.id === movie.id)
+                    ? `/movies#${item.name.replace(/[^A-Z0-9]/gi, "_")}`
+                    : `/shows#${item.name.replace(/[^A-Z0-9]/gi, "_")}`
+                }
+              >
+                Visit Profile
+              </Link>
+              <button
+                className={watchListCSS.removeBtn}
+                onClick={() => removeSelection({ id: item.id })}
+              >
+                Remove
               </button>
             </div>
           ))}
@@ -101,7 +129,9 @@ const WatchList = ({ removeSelection, list }) => {
 
 const mapStateToProps = state => {
   return {
-    list: state.list
+    list: state.selections.list,
+    movies: state.selections.movies,
+    shows: state.selections.shows
   }
 }
 

@@ -1,5 +1,62 @@
 @import "variables";
 
+@mixin device($breakpoint) {
+  @if $breakpoint == "XSM" {
+    @media (max-width: 25.875em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == "SM" {
+    @media (max-width: 48em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == "MD" {
+    @media (max-width: 64em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == "LG" {
+    @media (max-width: 85.375em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == "XLG" {
+    @media (min-width: 120em) {
+      @content;
+    }
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include device("XLG") {
+    font-size: 75%;
+  }
+
+  @include device("LG") {
+    font-size: 60%;
+  }
+
+  @include device("MD") {
+    font-size: 50%;
+  }
+
+  @include device("SM") {
+    font-size: 40%;
+  }
+
+  @include device("XSM") {
+    font-size: 35%;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -32,59 +89,28 @@ button:focus {
   outline: none;
 }
 
-@mixin device($breakpoint) {
-  @if $breakpoint == "deviceXSM" {
-    @media (max-width: 25.875em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == "deviceSM" {
-    @media (max-width: 48em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == "deviceMD" {
-    @media (max-width: 64em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == "deviceLG" {
-    @media (max-width: 85.375em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == "deviceXLG" {
-    @media (min-width: 120em) {
-      @content;
-    }
-  }
+a:hover,
+button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 100ms;
 }
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
+a {
+  text-decoration: none;
+}
 
-  @include device("deviceXLG") {
-    font-size: 75%;
-  }
+::-webkit-scrollbar {
+  width: 2rem;
+  background: $almostBlack;
+  border-left: lighten($movshoBlue, 10%) solid 0.1rem;
+}
 
-  @include device("deviceLG") {
-    font-size: 60%;
-  }
+::-webkit-scrollbar-track {
+  border-radius: 1rem;
+}
 
-  @include device("deviceMD") {
-    font-size: 45%;
-  }
-
-  @include device("deviceSM") {
-    font-size: 35%;
-  }
-
-  @include device("deviceXSM") {
-    font-size: 25%;
-  }
+::-webkit-scrollbar-thumb {
+  background: $movshoBlue;
+  border-radius: 1rem;
 }

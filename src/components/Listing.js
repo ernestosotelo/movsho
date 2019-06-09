@@ -1,63 +1,69 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 import {
-  fetchMovies,
+  fetchSelections,
   addSelection,
   removeSelection
 } from "../actions/selections"
 import listingCSS from "../styles/listing.module.scss"
 import movsho from "../images/svgs/movsho.svg"
-import eyes from "../images/svgs/eyes.svg"
 
-const Listing = (props, { list, movieId }) => {
+const Listing = props => {
   return (
-    <div className={listingCSS.listBlock}>
-      <img src={props.poster} alt={`Poster of: ${props.alt}`} />
+    <div
+      id={props.name.replace(/[^A-Z0-9]/gi, "_")}
+      className={listingCSS.listBlock}
+    >
+      <img
+        className={listingCSS.poster}
+        src={props.poster}
+        alt={`Poster of: ${props.alt}`}
+      />
       <div className={listingCSS.info}>
         <h3 className={listingCSS.name}>{props.name}</h3>
         <p className={listingCSS.plot}>{props.plot}</p>
         <p className={listingCSS.releaseDate}>
-          <b>Release Date:</b> {props.date}
+          <b>Release Date:</b> {props.releaseDate}
         </p>
         <p className={listingCSS.genre}>{props.genre}</p>
         <p style={{ color: "rgb(200, 158, 15)", fontSize: "2rem" }}>Ratings</p>
         <ul className={listingCSS.ratings}>
           <li>
-            IMDB: <b>{props.imdbRating}</b>
+            IMDB:<b>{props.imdbRating}/10</b>
           </li>
           <li>
-            Rotten Tomatoes: <b>{props.tomatoRating}</b>
+            TMDB: <b>{props.tmdbRating}%/100%</b>
           </li>
           <li>
-            MetaCritic: <b>{props.metaRating}</b>
+            MetaCritic: <b>{props.metaRating}/100</b>
           </li>
-
           <li>
-            The Movie Database: <b>{props.tmdbRating}</b>
+            Rotten Tomatoes: <b>{props.tomatoRating}%/100%</b>
           </li>
         </ul>
-        <p
-          style={{
-            fontSize: "1.6rem",
-            padding: ".3rem",
-            textAlign: "right"
-          }}
-        >
-          <img style={{ width: "2rem" }} src={movsho} alt="Movsho All Yellow" />{" "}
-          Movsho: <b>{props.movshoRating}</b>/100
+        <p className={listingCSS.movshoRating}>
+          <img src={movsho} alt="Movsho All Yellow" /> Movsho:{" "}
+          <b>{props.movshoRating}</b>/100
         </p>
-        <Link to={`${props.url}${props.name}`}>
-          <button className={listingCSS.reviewBtn}>Video Reviews</button>
-        </Link>
-        <p className={listingCSS.stream}>Streaming: {props.streamOn}</p>
+
+        {props.streamOn ? (
+          <p className={listingCSS.stream}>
+            {" "}
+            Streaming Service: {props.streamOn}{" "}
+          </p>
+        ) : (
+          <p style={{ color: "#c84f2d" }} className={listingCSS.stream}>
+            {" "}
+            No Streaming Available{" "}
+          </p>
+        )}
 
         <button
           style={{ display: props.addButtonToggle }}
           onClick={props.listAdd}
           className={listingCSS.watchBtn}
         >
-          <img className={listingCSS.eyes} src={eyes} alt="Eyes" />
+          + Add
         </button>
         <p
           style={{ display: props.addedMessageToggle }}
@@ -81,7 +87,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  fetchMovies,
+  fetchSelections,
   addSelection,
   removeSelection
 }

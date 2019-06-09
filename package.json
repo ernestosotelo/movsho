@@ -13,6 +13,7 @@
     "react-modal": "^3.8.1",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
+    "react-router-hash-link": "^1.2.1",
     "react-scripts": "3.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
@@ -25,8 +26,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "movies": "csvtojson ../csv/movies.csv > movies.json",
-    "shows": "csvtojson ../csv/shows.csv > shows.json"
+    "movies": "csvtojson ./csv/movies.csv > movies.json",
+    "shows": "csvtojson ./csv/shows.csv > shows.json"
   },
   "eslintConfig": {
     "extends": "react-app"

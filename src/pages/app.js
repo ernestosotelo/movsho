@@ -1,15 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
+import "../styles/settings.scss"
 import Layout from "../Layout"
 import Intro from "../components/Intro"
 import MonthlyPicks from "../components/MonthlyPicks"
-import ViewAll from "../components/ViewAll"
 
-const App = () => (
-  <Layout>
-    <Intro />
-    <MonthlyPicks />
-    <ViewAll />
-  </Layout>
-)
+const App = () => {
+  useEffect(() => {
+    document.title = "Movsho | Latest & Greatest Movies/Shows"
+  })
+
+  return (
+    <Layout>
+      <Intro />
+      <MonthlyPicks />
+    </Layout>
+  )
+}
 
 export default App
