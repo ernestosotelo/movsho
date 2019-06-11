@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.22fc665b.chunk.css",
-    "main.js": "./static/js/main.182cae44.chunk.js",
-    "main.js.map": "./static/js/main.182cae44.chunk.js.map",
+    "main.css": "./static/css/main.50dbc0e5.chunk.css",
+    "main.js": "./static/js/main.2b741b9c.chunk.js",
+    "main.js.map": "./static/js/main.2b741b9c.chunk.js.map",
     "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
     "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
-    "static/js/2.f8817a37.chunk.js": "./static/js/2.f8817a37.chunk.js",
-    "static/js/2.f8817a37.chunk.js.map": "./static/js/2.f8817a37.chunk.js.map",
+    "static/js/2.0399b7a5.chunk.js": "./static/js/2.0399b7a5.chunk.js",
+    "static/js/2.0399b7a5.chunk.js.map": "./static/js/2.0399b7a5.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.8be8d6a8817436ac074c0bd471cdadf2.js": "./precache-manifest.8be8d6a8817436ac074c0bd471cdadf2.js",
+    "precache-manifest.9c58b410d6f2e744ab50a35d3c1ebf08.js": "./precache-manifest.9c58b410d6f2e744ab50a35d3c1ebf08.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.22fc665b.chunk.css.map": "./static/css/main.22fc665b.chunk.css.map",
+    "static/css/main.50dbc0e5.chunk.css.map": "./static/css/main.50dbc0e5.chunk.css.map",
     "static/media/captainMarvel.jpg": "./static/media/captainMarvel.644d9bee.jpg",
-    "static/media/eyes.svg": "./static/media/eyes.d9b3e61e.svg",
-    "static/media/intro.svg": "./static/media/intro.3a26f212.svg",
+    "static/media/intro.svg": "./static/media/intro.13b2ef28.svg",
     "static/media/movsho.svg": "./static/media/movsho.ccfadd30.svg",
-    "static/media/movshoHearts.svg": "./static/media/movshoHearts.ed75f9bc.svg",
-    "static/media/navIcon.svg": "./static/media/navIcon.b6eded60.svg",
-    "static/media/navLogo.svg": "./static/media/navLogo.96e5c0f6.svg",
+    "static/media/navIcon.svg": "./static/media/navIcon.e70147fd.svg",
+    "static/media/navLogo.svg": "./static/media/navLogo.07d971c9.svg",
     "static/media/ourPlanet.jpg": "./static/media/ourPlanet.61420198.jpg",
-    "static/media/viewAllMovies.svg": "./static/media/viewAllMovies.4780abe0.svg",
-    "static/media/viewAllShows.svg": "./static/media/viewAllShows.2f5a180c.svg"
+    "static/media/viewAllMovies.svg": "./static/media/viewAllMovies.ea33b296.svg",
+    "static/media/viewAllShows.svg": "./static/media/viewAllShows.700e22c6.svg"
   }
 }
